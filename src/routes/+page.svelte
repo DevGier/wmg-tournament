@@ -5,6 +5,7 @@
 	import Upnext from '../components/Upnext.svelte';
 	import Trophies from '../components/Trophies.svelte';
 	import Chart from '../components/Chart.svelte';
+	import AddScore from '../components/AddScore.svelte';
 
 	export let data;
 </script>
@@ -15,6 +16,8 @@
 		<div class="flex flex-col gap-8">
 			<Standings users={data.users} />
 			<Upnext nextRound={data.nextRound} />
+
+			<AddScore />
 		</div>
 
 		<div class="flex flex-col gap-8">

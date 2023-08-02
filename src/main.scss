@@ -2,3 +2,82 @@ html,
 body {
     @apply bg-slate-100;
 }
+
+.add-score {
+    position: fixed;
+    inset: 0;
+    z-index: 9999999;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s ease;
+
+    &.active {
+        pointer-events: all;
+        opacity: 1;
+    }
+
+    &.disabled {
+        opacity: 0.8;
+        pointer-events: none;
+    }
+
+    &__title {
+        @apply border-b-green-500 text-xl font-bold mb-0 pb-3;
+    }
+
+    &:after {
+        position: absolute;
+        inset: 0;
+        content: '';
+        background-color: rgba(#000, 0.1);
+    }
+
+    &__wrapper {
+        width: 500px;
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        background-color: #fff;
+        border-radius: 12px;
+        padding: 32px;
+        transform: translate(-50%, -50%);
+    }
+
+    &__close {
+        position: absolute;
+        top: 32px;
+        right: 32px;
+        width: 24px;
+        height: 24px;
+
+        cursor: pointer;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        .score {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 16px;
+            align-items: center;
+
+            .username {
+                text-transform: capitalize;
+                font-weight: 500;
+            }
+
+            input {
+                justify-self: flex-end;
+                width: 80px;
+            }
+        }
+    }
+}
+
+input,
+select {
+    @apply p-3 border rounded appearance-none;
+}

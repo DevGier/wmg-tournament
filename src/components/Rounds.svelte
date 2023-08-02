@@ -27,7 +27,7 @@
 					<tr>
 						<td class="capitalize">{user.username}</td>
 
-						{#each user.allPoints as point}
+						{#each user.allPointsLoose as point}
 							<td class="text-slate-500 text-center">{point}</td>
 						{/each}
 					</tr>
