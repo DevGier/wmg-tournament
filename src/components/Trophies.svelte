@@ -9,7 +9,7 @@
 		<table class="border-spacing-[8px] border-separate">
 			{#each users as user}
 				<tr>
-					<td class="capitalize">{user.username}</td>
+					<td class="capitalize"><div class="flex items-center h-[85px]">{user.username}</div></td>
 
 					{#each user.trophies as trophy}
 						<td
